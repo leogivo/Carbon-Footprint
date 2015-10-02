@@ -86,7 +86,7 @@ def main():
     mainWindow.resizable(0,0) #resizable option is not alloweds
     mainWindow.geometry("800x500+275+200")
     mainWindow.title("Carbon & Water Footprint")
-
+    mainWindow.configure(background="white")
     # Setting an intro label a starting label
     introLabel = Label(myFrame, text = "Welcome to the Carbon & Water Footprint calculator!", font = "Verdana 14")
     introLabel.pack(anchor=CENTER, pady=5)  #place = place on the screen
@@ -100,16 +100,16 @@ def main():
     # Creating a canvas where an image can be inserted
     myCanvas = Canvas(myFrame, width=327, height=400)
     myCanvas.place(x=10, y=70)#pack(side = "bottom", fill = "both", expand = "yes")
-    img = Image.open("C:\Users\Givo\DEsktop\Carbon Footprint\Immagini\prova4.jpg")
+    img = Image.open("C:\Users\Givo\DEsktop\Carbon Footprint\Immagini\Orma_carbon2.jpg")
     myCanvas.image = ImageTk.PhotoImage(img)
     myCanvas.create_image(200,200, image=myCanvas.image)
 
     # Creating two main buttons
     carbonButton = Button(myFrame, text = "Start Carbon Footprint", command=carbonFootprint)
-    carbonButton.place(x=340, y=142)
+    carbonButton.place(x=340, y=180)
     carbonButton.configure(width=20)
     waterButton = Button(myFrame, text = "Start Water Footprint", command=waterFootprint, state=DISABLED)
-    waterButton.place(x=340,y=284)
+    waterButton.place(x=340,y=290)
     waterButton.configure(width=20)
 
     showFrontmostApp(mainWindow)
